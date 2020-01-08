@@ -1,0 +1,117 @@
+.midPageHeader{
+    display:flex;
+    justify-content: space-around;
+    letter-spacing: 5px;
+    font-size: 3rem;
+    font-family: Montserrat;
+    margin: 3rem 0px;
+}
+
+.secondBoxContainer {
+    background-image: url("../Images/Shoes/freestocks-org-thaE_wZQ1_U-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: static;
+    background-position: center;
+
+}
+
+.secondSortBox {
+    height: 30rem;
+    margin-bottom: 5rem;
+}
+
+.secondBoxContainer a{
+    border: 8px solid #EFF6EE;
+    border-radius: 3rem;
+    background-color: #EFF6EE;
+    font-size: 1.8rem;
+    color:#273043;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: Montserrat;
+    position: absolute;
+    z-index: 0;
+    top: 68rem;
+    right: 16rem;
+    left: auto;
+    opacity: 0.8;
+}
+
+.secondSortBox a:hover{
+    opacity: 1;
+}
+
+.midPageHeader img{
+    margin: 5rem 0;
+    width: 300px;
+    height: 449px;
+}
+
+.midPageHeader p{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: .8rem;
+    font-family: Merriweather;
+    width: 75%;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+
+.midPagePara p{
+    padding: 0 2rem;
+    margin-bottom: 2rem;
+
+}
+
+@media screen and (max-width:914px){
+
+    
+    .midPageHeaderPhone{
+       display: inline-table;
+       align-items: center;
+       justify-content: space-around;
+       margin-left: 25vw;
+       width: 85%;
+       text-align:  left;
+    }
+
+    .midPageHeaderPhone p{
+        margin-right: 0;
+        width: 85%;
+        text-align:  center;
+        position: relative;
+        left: -5rem;
+    }
+
+    .midPageHeaderPhone h3{
+        position: relative;
+        left: -5rem;
+    }
+}
+
+@media screen and (max-width:600px){
+    .midPageHeaderPhone{
+        display: inline-table;
+        align-items: center;
+        justify-content: space-around;
+        margin-left: 20vw;
+        width: 85%;
+        text-align:  left;
+     }
+ 
+     .midPageHeaderPhone p{
+         margin-right: 0;
+         width: 85%;
+         text-align:  center;
+         position: relative;
+         left: -1rem;
+     }
+
+     .midPageHeaderPhone h3{
+         position: relative;
+         left: -2rem;
+     }
+}

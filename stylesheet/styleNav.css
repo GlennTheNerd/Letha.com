@@ -1,0 +1,247 @@
+/*Global*/
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+
+body{
+    background-color: #F8F8F8;
+}
+
+/*  Navigation Helper   */
+.active{
+    color: white !important;
+}
+
+.padding img{
+    margin:0 10px;
+}
+
+.logonav {
+    text-decoration: none;
+    color: inherit;
+}
+.navHelper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Merriweather', sans-serif;
+    background-color: #EFF6EE;
+    color: #9197AE;
+    height: 2em;
+    box-shadow: 0 5px 5px -8px black;
+}
+
+.helperBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 88%;
+}
+
+.help_findus{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 30%;
+}
+
+.help_findus li{
+    list-style: none;
+}
+
+.customlink {
+    text-decoration: none;
+    color: #273043;
+}
+
+.customlink:hover {
+    color: #9197AE;
+}
+
+/*Navigation*/
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    max-height: 15h;
+    background-color:#9197AE;
+    font-family: 'Montserrat', sans-serif;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+/*  LOGO    */
+.logo{
+    color:#273043;
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+/* NAV LINKS*/
+
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    list-style: none;
+}
+
+.nav-links a:hover{
+    list-style: none;
+    color: #EFF6EE;
+    cursor: pointer;
+    border: 1px solid white;
+}
+
+.nav-links a{
+    color: #273043;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#shoppingBasket{
+    width: 2em;
+}
+
+#gps{
+    float: right;
+    width: .6rem;
+    margin-left: 5px;
+}
+
+.burger{
+    display: none;
+}
+
+.burger div{
+   width: 25px;
+   height: 3px;
+   background-color:#273043;
+   margin: 5px;
+   transition: all 0.3s ease;
+}
+
+
+@media screen and (max-width:900px){
+
+    html{
+        overflow-x: hidden;
+    }
+
+    body{
+        overflow-x: none;
+    }
+
+
+    .logo {
+        font-size: 2em;
+    }
+
+    .help_findus a{
+        display: none;
+    }
+
+    .nav-links {
+        position: fixed;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: #9197AE;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav-links li{
+        opacity: 0;
+    }
+
+    .nav-active{
+        transform: translateX(0%);
+    }
+    
+
+    #shoppingBasket {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    @keyframes navLinkFade {
+        from{
+            opacity: 0;
+            transform: translateX(50px);
+        } 
+        to {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+
+    .toggle .line1{
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .toggle .line2{
+        opacity: 0;
+    }
+    .toggle .line3{
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+
+
+
+
+/*
+The underdescription beneath the navbar
+*/
+/*
+.navbar {
+    background-color: #9197AE;
+}
+
+.navbar-brand h1{
+    color: #273043;
+    font-size: 3rem;
+    float: left;
+}
+
+.nav-item{
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-left: 3rem;
+}
+
+.bulletRemove {
+    list-style-type: none;
+}
+
+.bulletRemove a{
+    color: #273043;
+}
+
+.navHelper {
+    background-color: #EFF6EE;
+    height: 2.5rem;
+}
+
+.padding {
+    padding-top: 0.5rem;
+}
+*/

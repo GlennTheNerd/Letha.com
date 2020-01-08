@@ -1,0 +1,75 @@
+footer{
+    background-color: #9197AE;
+    color:#F8F8F8;
+}
+
+.FooterContainer{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: auto;
+    padding: 1em 10px;
+    max-width: 70rem;
+}
+
+.FooterContainer li{
+    list-style: none;
+}
+
+.footBox1{
+    color: white;
+
+}
+
+.footBox1 li{
+    margin: 1em 0;
+}
+
+.footBox1 a{
+    text-decoration: none;
+    color: white;
+}
+
+.footBox2{
+    color: white;
+}
+
+.footBox2 a{
+    text-decoration: none;
+    color: white;
+}
+
+.footBox2 li{
+    margin: 1em 0 .5em
+}
+
+.footBox3 ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.footBox3 a{
+    text-decoration: none;
+}
+
+.footBox3 li{
+    margin: 0.3em auto 0;
+    padding: 1em;
+}
+
+.footBox3 img{
+    width: 2.5rem;
+}
+
+@media screen and (max-width: 768px){
+    .footBox3 ul{
+        display: block;
+    }
+
+    .footBox3 img{
+        width: 2rem;
+        margin: -1em 0;
+}
+}

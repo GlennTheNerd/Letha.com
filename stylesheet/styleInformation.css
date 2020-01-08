@@ -1,0 +1,229 @@
+/*  Heading     */
+
+.hero-Info{
+
+}
+
+.hero-Info h1{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #273043;
+    margin: 3em 0 0em 10px;
+    font-weight: 900;
+    font-size: 2.5em;
+}
+.punchline{
+    background-image: url(/Images/Background/Designer_background_information.jpg);
+    background-repeat: no-repeat;
+    background-color: #F8F8F8;
+    background-size: 50rem;
+    background-position: left;
+    height: 27em;
+}
+
+.punchline-container{
+    background-image: url(/icons/squareBox.svg);
+    background-repeat: no-repeat;
+    background-size: fill;
+    background-position: center;
+    display: inline-block;
+    margin: 5em 60%;
+    width: 25em;
+    height: 20em;
+}
+
+@media screen and (max-width: 1100px){
+    .punchline-container{
+        width: 20em;
+        height: 15em;
+    }
+}
+
+.punchline p{
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: montserrat;
+    letter-spacing: 2px;
+    color: #273043;
+}
+
+.punchline-wrap{
+    margin-top: 4em;
+}
+
+.psmall{
+    font-size: 1em;
+}
+
+.pmedium{
+    font-size: 2.5em;
+    font-weight: 900;
+    margin-top: -0.2em;
+}
+
+.plarge{
+    font-size: 5em;
+    font-weight: 900;
+    margin-top: -0.1em;
+}
+
+@media screen and (max-width: 1100px){
+.punchline{
+    background-size: 40em;
+}
+
+    .psmall{
+        font-size: 0.8em;
+    }
+
+    .plarge{
+        font-size: 3em;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .punchline{
+        background-size: 35em;
+    }
+
+    .punchline-container{
+        margin: 4em 55%;
+    }
+}
+
+@media screen and (max-width: 729px){
+    .punchline{
+        background-size: 32em;
+    }
+}
+
+/*  Motive */
+
+.three-column-images{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2em auto;
+    overflow: scroll;
+    width: 100vw;
+}
+
+.three-column-images img{
+    width: 30em;
+}
+
+.three-column-images h2{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #273043;
+    font-size: 3em;
+    text-align: center;
+}
+
+.three-column-images p{
+    font-family: montserrat;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* screen break*/
+@media screen and (max-width: 1440px){
+    .three-column-images img{
+        width: 20em;
+    }
+
+    .three-column-images h2{
+        font-size: 2em;
+    }
+
+    .three-column-images p{
+        font-size: 0.7em;
+    }
+}
+
+/*  screen break small screen   */
+
+@media screen and (max-width: 960px){
+    .three-column-images img{
+        width: 15em;
+    }
+}
+
+@media screen and (max-width: 720px){
+    .three-column-images {
+        display: inline-block;
+        margin: 2em auto;
+    }
+
+    .three-column-images img{
+       margin: 2em 0 5px 14%;
+       width: 30em;
+    }
+
+    .three-column-images p{
+        font-size: 1em;
+    }
+
+    .three-column-images h2{
+        font-size: 3em;
+    }
+}
+
+/* Why you should shop at letha section*/
+
+.description-info{
+    background-image: url(/icons/circle.svg);
+    background-repeat: no-repeat;
+    background-size: fill;
+    background-position: right;
+    width: 90vw;
+    height: 250px;
+    margin: 5em auto 0;
+}
+
+.description-info h3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    margin: 2em 0 1em 1.5em;
+    letter-spacing: 2px;
+}
+
+.description-info p{
+    font-family: montserrat;
+    margin: 0 auto;
+    width: 80vw;
+    font-size: 1em;
+}
+
+/*  Staff   */
+.staff-info{
+    background-image: url(/icons/triangle.svg);
+    background-repeat: no-repeat;
+    background-size: 20em;
+    background-position: center;
+}
+
+.staff-info h4{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    color: #273043;
+    margin: 1em 0 1em 1.5em;
+}
+
+.staff-info ul{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 90vw;
+    margin: 0 auto;
+}
+
+.profile-picture{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 1px solid #273043;
+}
+
+.staff-info li{
+    margin: 1.5em 7em;
+}

@@ -1,0 +1,34 @@
+.hero-brands{
+    width: 12em;
+    margin: 2em 10em;
+}
+
+.hero-brands h1{
+    font-size: 3em;
+    font-family: merriweather;
+}
+
+.hero-brands p{
+    font-size: 1.5em;
+    text-align: right;
+    font-family: montserrat;
+}
+
+.Section-Wrapper{
+    display: flex;
+    justify-content: space-between;
+    font-family: montserrat;
+    width: 80em;
+    margin: 0 auto;
+
+}
+
+.column1{
+    white-space: pre-line;
+}
+.column2{
+    white-space: pre-line;
+}
+.column3{
+    white-space: pre-line;
+}
