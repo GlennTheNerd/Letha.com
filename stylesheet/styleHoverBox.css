@@ -1,127 +1,141 @@
-.toggleDisplay{
-   /* display: none !important;*/
+.toggleDisplay {
+  display: none !important;
 }
 
-#hidden-description-box{
-    background-color: white;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    height: 30em;
-    width: 70%;
-    min-width: 700px;
-    position: fixed;
-    top: 8em;
-    right: 5%;
-    z-index: 100;
-    font-family: Arial, Helvetica, sans-serif;
-    box-shadow: 0 5ox 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
+#hidden-description-box {
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  height: 32em;
+  width: 70%;
+  min-width: 700px;
+  position: fixed;
+  top: 8em;
+  right: 5%;
+  z-index: 100;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0 5ox 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
 }
 
-.box-price{
-    font-size: 1.5em;
+.box-price {
+  font-size: 1.5em;
 }
 
-#title{
-    background-color: blue;
-    display: block;
-    width: 100%;
-    height: 30px;
-    font-size: 1.6em;
-    letter-spacing: 4px;
-    text-transform: uppercase;
+#title {
+  background-color: blue;
+  display: block;
+  width: 100%;
+  height: 30px;
+  font-size: 1.6em;
+  letter-spacing: 4px;
+  text-transform: uppercase;
 }
 
-#title h3{
-    margin-left: 5em;
+#title h3 {
+  margin-left: 5em;
 }
 
-.closeBtn{
-    position: absolute;
-    top: 0;
-    right: 5%;
-    font-size: 1.2em;
-    color: #273043;
-    opacity: 0.8;
+.closeBtn {
+  position: absolute;
+  top: 0;
+  right: 5%;
+  font-size: 1.2em;
+  color: #273043;
+  opacity: 0.8;
 }
 
 .closeBtn:hover {
-    color: black;
-    opacity: 1;
-    cursor: pointer;
+  color: black;
+  opacity: 1;
+  cursor: pointer;
 }
 
-#image{
-    width: 60%;
-    background-color: grey;
-    height: 60%;
+#image {
+  width: 60%;
+  background-color: grey;
+  height: 80%;
+  overflow: hidden;
 }
 
-#addToBasket{
-    background-color: pink;
-    width: 40%;
-    height: 94%;
-    display: block;
+/*Image box*/
+
+.modalImage {
+  height: 100%;
+  width: auto;
+  display: block;
+  margin: 0 auto;
 }
 
-.boxStyle{
-    border: 1px solid black;
-    padding: 2em;
+#addToBasket {
+  background-color: pink;
+  width: 40%;
+  height: 94%;
+  display: block;
 }
 
-.boxStyle select{
-    width: 5em;
-    background-color: #273043;
-    color: #EFF6EE;
-    font-size: 0.8em;
+.boxStyle {
+  border: 1px solid black;
+  padding: 2em;
 }
 
-.boxStyle img{
-    width: 2.5em;
+.boxStyle select {
+  width: 5em;
+  background-color: #273043;
+  color: #eff6ee;
+  font-size: 0.8em;
 }
 
-#description{
-    width: 60%;
-    background-color: royalblue;
-    height: 30%;
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 60%;
-    height: 40%;
+.boxStyle img {
+  width: 2.5em;
 }
 
-.sizeBox{
-    float: left;
-    margin: 0 2em 2em 0;
+#description {
+  width: 60%;
+  background-color: royalblue;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 80%;
+  height: 20%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.1em;
+  text-align: center;
+  padding-top: 1em;
+  overflow-y: auto;
 }
 
-.buttonContainer{
-    width: 75%;
-    margin: 2em auto 0;
+.sizeBox {
+  float: left;
+  margin: 0 2em 2em 0;
 }
 
-.shoppingBagButton{
-    background-color: #273043;
-    color:#EFF6EE;
-    font-size: 1em;
-    width: 100%;
-    height: 2.5em;
-    border-radius: 25px;
-    text-transform: uppercase;
+.buttonContainer {
+  width: 75%;
+  margin: 2em auto 0;
 }
 
-.shoppingBagButton:hover{
-    cursor: pointer;
-    border: 3px solid white;
+.shoppingBagButton {
+  background-color: #273043;
+  color: #eff6ee;
+  font-size: 1em;
+  width: 100%;
+  height: 2.5em;
+  border-radius: 25px;
+  text-transform: uppercase;
 }
 
-.basketBox3 ul{
-    margin: 8px 5em 0px;
-    display: flex;
-    justify-content: space-between;
+.shoppingBagButton:hover {
+  cursor: pointer;
+  border: 3px solid white;
 }
 
-#pageContainerToggle{
-    filter: blur(0px);
+.basketBox3 ul {
+  margin: 8px 5em 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.blur {
+  filter: blur(6px);
 }
