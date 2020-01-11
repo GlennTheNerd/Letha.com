@@ -109,10 +109,21 @@ nav {
 }
 
 #shoppingBasketLogo {
-  width: 2em;
+  width: 1.9em;
+}
+
+#shoppingBasketLogo:hover{
+  border: 1px dotted white;
+}
+
+#shoppingBasketLogo:active{
+  border: 1px solid white;
 }
 #shoppingBasket {
-  font-size: 1.5em;
+  color: #eff6ee;
+  padding: 3px;
+  border-radius: 25px;
+
 }
 #gps {
   float: right;

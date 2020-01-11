@@ -5,7 +5,9 @@ var data = [
       "For those who enjoy the outdoors, the Hardy Hiker is for you. This trendy boot is made from strong, durable leather and utilises the latest sole technology to ensure a comfortable fit. The boot is only available in brown leather. Whether you wear it while exploring the city or heading into the hills, this boot is the perfect accessory for the rugged, chic look.",
     imageUrl:
       "https://images.unsplash.com/photo-1493054882428-e4c79a9bfa3b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1329&q=80",
-    id: 1
+    id: 1,
+    sizes: [37, 38, 39, 40, 41, 43, 44, 45],
+    price: 78.99
   },
   {
     name: "Bashful Brogue",
@@ -13,7 +15,9 @@ var data = [
       "Our Bashful Brogue is one of our most popular shoes. It is perfect as formal wear or for office use. Its comfortable sole makes it perfect for all day wear. The brogue is made from brown or black leather and is studded using our unique pattern.",
     imageUrl:
       "https://images.unsplash.com/photo-1504826023244-4694f7330c73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80",
-    id: 2
+    id: 2,
+    sizes: [37, 38, 39, 40, 41, 43, 44, 45],
+    price: 69.99
   },
   {
     name: "Nice and Easy",
@@ -21,7 +25,9 @@ var data = [
       "Perfect for every occasion, Nice and Easy is the perfect all-rounder to ensure you're always looking at the top of your game. It's easy to wear and maintain and will be the perfect accompaniment for after dinner drinks, an interview, or even your next date.",
     imageUrl:
       "https://images.unsplash.com/photo-1534233650908-b471f2350922?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80",
-    id: 3
+    id: 3,
+    sizes: [41, 39, 37, 42, 43, 44],
+    price: 89.99
   },
   {
     name: "Calm and Casual",
@@ -30,7 +36,8 @@ var data = [
     imageUrl:
       "https://images.unsplash.com/photo-1548430395-ec39eaf2aa1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1374&q=80",
     id: 4,
-    sizes: [37, 39, 41]
+    sizes: [37, 39, 41],
+    price: 79.99
   },
   {
     name: "Urbana",
@@ -39,7 +46,8 @@ var data = [
     imageUrl:
       "https://images.unsplash.com/photo-1460066122679-741dd6c4ad37?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
     id: 5,
-    sizes: [41, 39, 37]
+    sizes: [41, 39, 37, 42, 44, 46],
+    price: 69.99
   }
 ];
 
@@ -60,7 +68,7 @@ function buildView(data) {
             <img class="card-image" id="${card.id}" src="${card.imageUrl}">
             <p class="numberOfLikes"><img class="heart heart-categories" src="/icons/heart.svg">200</p>
             <h3 class="card-name">${card.name}</h3>
-            <p class="card-price">$39.90</p>
+            <p class="card-price">$${card.price}</p>
         </div>
             `;
   }
@@ -83,7 +91,7 @@ function buildModal(id) {
     </div>
     <div id="addToBasket">
         <div class="basketBox1 boxStyle">
-            <p class="box-price">${selectedElement.price}</p>
+            <p class="box-price">$${selectedElement.price}</p>
         </div>
         <div class="basketBox2 boxStyle">
             <p class="box-color">Color: ${selectedElement.color}</p>
@@ -146,4 +154,39 @@ function numInShoppingCart() {
     .length;
   const basket = document.getElementById("shoppingBasket");
   basket.innerHTML = storageCount;
+}
+
+function buildAllShoppingItems(){
+  const retrievedData = JSON.parse(sessionStorage.getItem("ShoppingCart"));
+  const totalContentBox = document.getElementById('shoppingBag');
+  console.log(retrievedData) // Log out data from sessionStorage
+
+  //check if the array is not empty, then do nothing
+  if(retrievedData === null || retrievedData === undefined){
+    console.log('no data')
+    } else {
+        // We have data, lets build
+        for (const item in retrievedData){
+            // For each item, lets get some html
+            var itemHtml = buildShoppingList(item);
+            totalContentBox.innerHTML += itemHtml; // Add the item html to some div or container
+        }  
+    }
+}
+
+function buildShoppingList(item){
+    var dataItem = data.find(obj => obj.id === item.id) // Fetch item with more info
+    dataItem.size = item.size; // Add size into the mix
+    console.log(dataItem);
+    var html = `<h3>Shopping Bag</h3>
+      <div class="itemsContainer">
+      <div class="itemImage">
+          <img class="imageDisplayed" alt="Picture of Shoes" src="${dataItem.imageUrl}">
+      </div>
+      <div class="descriptionForImage" id="descriptionParagraph">
+          <p class="descriptionParagraph">${dataItem.name} - ${dataItem.price}</p>
+          <p>Size: ${dataItem.size}</p>
+          <p><img id="removeTrash" src="/icons/trash.svg" alt="trash icon"> Remove | <img id="emptyheart" src="icons/emptyheart.svg" alt="wish heart icon"> Heart It</p>
+    `
+    return html
 }
