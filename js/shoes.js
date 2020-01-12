@@ -111,12 +111,13 @@ document.addEventListener(
 
 function buildView(data) {
   const cardcontainer = document.getElementById("card-image");
+  const likes = Math.random(Math.floor())
   // For each element in data
   for (const card of data) {
     // Append element to the innerhtml
     cardcontainer.innerHTML += `<div class="card-container" onclick="buildModal(${card.id})">
             <img class="card-image" id="${card.id}" src="${card.imageUrl}">
-            <p class="numberOfLikes"><img class="heart heart-categories" src="/icons/heart.svg">200</p>
+            <p class="numberOfLikes"><img class="heart heart-categories" src="icons/heart.svg" alt="heart icon">${likes}</p>
             <h3 class="card-name">${card.name}</h3>
             <p class="card-price">$${card.price}</p>
         </div>

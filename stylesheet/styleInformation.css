@@ -8,7 +8,7 @@
     font-size: 2.5em;
 }
 .punchline{
-    background-image: url(/Images/Background/Designer_background_information.jpg);
+    background-image: url("../Images/Background/Designer_background_information.jpg");
     background-repeat: no-repeat;
     background-color: #F8F8F8;
     background-size: 50rem;
@@ -17,7 +17,7 @@
 }
 
 .punchline-container{
-    background-image: url(/icons/squareBox.svg);
+    background-image: url("../icons/squareBox.svg");
     background-repeat: no-repeat;
     background-size: fill;
     background-position: center;
@@ -167,7 +167,7 @@
 /* Why you should shop at letha section*/
 
 .description-info{
-    background-image: url(/icons/circle.svg);
+    background-image: url("../icons/circle.svg");
     background-repeat: no-repeat;
     background-size: fill;
     background-position: right;
@@ -192,7 +192,7 @@
 
 /*  Staff   */
 .staff-info{
-    background-image: url(/icons/triangle.svg);
+    background-image: url("../icons/triangle.svg");
     background-repeat: no-repeat;
     background-size: 20em;
     background-position: center;

@@ -56,7 +56,7 @@
 }
 
 .HeadBox1 {
-    background-image: url("/Images/Background/head1.jpg");
+    background-image: url("../Images/Background/head1.jpg");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -65,7 +65,7 @@
 }
 
 .HeadBox2 {
-    background-image: url("/Images/Background/head2.jpg");
+    background-image: url("../Images/Background/head2.jpg");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -74,7 +74,7 @@
 }
 
 .HeadBox3 {
-    background-image: url("/Images/Background/head3.jpg");
+    background-image: url("../Images/Background/head3.jpg");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
