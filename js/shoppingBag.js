@@ -178,7 +178,7 @@ function buildShoppingList(item){
     <div class="descriptionForImage" id="descriptionParagraph">
         <p class="descriptionParagraph">${dataItem.name} - $${dataItem.price}</p>
         <p>Size: ${dataItem.size}</p>
-        <p><img id="removeTrash" src="/icons/trash.svg" alt="trash icon" onclick="removeTrash(${dataItem.id})"> Remove | <img id="emptyheart" src="icons/emptyheart.svg" alt="wish heart icon" onclick="likeIconChanger()"> Like!</p>
+        <p><img id="removeTrash" src="icons/trash.svg" alt="trash icon" onclick="removeTrash(${dataItem.id})"> Remove | <img id="emptyheart" src="icons/emptyheart.svg" alt="wish heart icon" onclick="likeIconChanger()"> Like!</p>
         </div>
         <div class="amountBox">
             <select>

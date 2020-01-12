@@ -111,7 +111,12 @@ document.addEventListener(
 
 function buildView(data) {
   const cardcontainer = document.getElementById("card-image");
-  const likes = Math.random(Math.floor())
+  //testing to get random likes
+  const number = Math.random() + Math.random();
+  console.log(number)
+  const likes = Math.round(number) * 545;//issues where the same number adds on every card, fix later
+  console.log(likes)
+  
   // For each element in data
   for (const card of data) {
     // Append element to the innerhtml
@@ -161,9 +166,9 @@ function buildModal(id) {
         <div class="basketBox3 boxStyle">
             <p>Share</p>
             <ul>
-                <li><a href="#"><img src="/Images/social media/twitter.png"></a></li>
-                <li><a href="#"><img src="/Images/social media/face.png"></a></li>
-                <li><a href="#"><img src="/Images/social media/snapchat.png"></a></li>
+                <li><a href="#"><img src="Images/social media/twitter.png"></a></li>
+                <li><a href="#"><img src="Images/social media/face.png"></a></li>
+                <li><a href="#"><img src="Images/social media/snapchat.png"></a></li>
             </ul>
         </div>
     </div>
