@@ -7,7 +7,9 @@ var data = [
       "https://images.unsplash.com/photo-1493054882428-e4c79a9bfa3b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1329&q=80",
     id: 1,
     sizes: [37, 38, 39, 40, 41, 43, 44, 45],
-    price: 78.99
+    price: 78.99,
+    color: "Brown",
+    type: "Boots"
   },
   {
     name: "Bashful Brogue",
@@ -17,7 +19,9 @@ var data = [
       "https://images.unsplash.com/photo-1504826023244-4694f7330c73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80",
     id: 2,
     sizes: [37, 38, 39, 40, 41, 43, 44, 45],
-    price: 69.99
+    price: 69.99,
+    color: "Brown",
+    type: "Boots"
   },
   {
     name: "Nice and Easy",
@@ -27,7 +31,9 @@ var data = [
       "https://images.unsplash.com/photo-1534233650908-b471f2350922?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80",
     id: 3,
     sizes: [41, 39, 37, 42, 43, 44],
-    price: 89.99
+    price: 89.99,
+    color: "Brown",
+    type: "Boots"
   },
   {
     name: "Calm and Casual",
@@ -37,7 +43,9 @@ var data = [
       "https://images.unsplash.com/photo-1548430395-ec39eaf2aa1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1374&q=80",
     id: 4,
     sizes: [37, 39, 41],
-    price: 79.99
+    price: 79.99,
+    color: "Yellow",
+    type: "Sneakers"
   },
   {
     name: "Urbana",
@@ -47,7 +55,49 @@ var data = [
       "https://images.unsplash.com/photo-1460066122679-741dd6c4ad37?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
     id: 5,
     sizes: [41, 39, 37, 42, 44, 46],
-    price: 69.99
+    price: 69.99,
+    color: "Beige",
+    type: "Boots"
+  },
+  {
+    name: "Kal Visuals",
+    description: "Take on these new stylish work boots, and bring nature to the urbans. Feel the comfort and robustness in all kinds of settings.",
+    imageUrl: "https://images.unsplash.com/photo-1542838687-936f417d2f37?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3150&q=80",
+    id: 6,
+    sizes: [39, 40, 41, 42, 43, 45, 46],
+    price: 119.99,
+    color: "Darkened Red",
+    type: "Boots"
+  },
+  {
+    name: "Reza Heydar",
+    description: "Never hesitate again and give your feet what they deserve with these rock solid, army boots. Bring style to the streets and feel the comfort knowing these shoes are both waterproof and crush-proof",
+    imageUrl: "https://images.unsplash.com/photo-1542913269-3230d7bd3a35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80",
+    id: 7,
+    sizes: [40,41,42,43,44,45,46,47],
+    price: 109.99,
+    color: "Beige",
+    type: "Boots"
+  },
+  {
+    name: "Brandon Bean",
+    description: "Perfect for every occasion, Nice and Easy is the perfect all-rounder to ensure you're always looking at the top of your game. It's easy to wear and maintain and will be the perfect accompaniment for after dinner drinks, an interview, or even your next date.",
+    imageUrl: "https://images.unsplash.com/photo-1563128234-dd1a56eed05d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80",
+    id: 8,
+    sizes: [39,40,41,42,43,44,45,46,47],
+    price: 99.99,
+    color: "Brown",
+    type: "Boots"
+  },
+  {
+    name: "Sanoy Saha",
+    description: "Our Sanoy Saha is one of our most recent shoes. It is perfect as formal wear or for office use. Its comfortable sole makes it perfect for all day wear. The Sanoy is made from brown or black leather and is studded using our unique pattern.",
+    imageUrl: "https://images.unsplash.com/photo-1557870187-4304e2c2b357?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80",
+    id: 9,
+    sizes: [39,40,41,42,43,44,45,46,47],
+    price: 89.99,
+    color: "Black",
+    type: "Boots"
   }
 ];
 
@@ -91,18 +141,21 @@ function buildModal(id) {
     </div>
     <div id="addToBasket">
         <div class="basketBox1 boxStyle">
-            <p class="box-price">$${selectedElement.price}</p>
+            <span class="DiscountBox">Special Offer Today Only 25% Off</span>
+            <p class="box-price">Price: $${selectedElement.price}</p>
         </div>
         <div class="basketBox2 boxStyle">
             <p class="box-color">Color: ${selectedElement.color}</p>
             <div>
                 <p class="sizeBox">Size:</p>
-                <select id="sizeOptions"> 
+                <select id="sizeOptions">
                 </select>
             </div>
             <div class="buttonContainer">
                 <button class="shoppingBagButton" onclick="addToBasket(${selectedElement.id})">Add to shopping bag</button>
             </div>
+            <div class="buttonContainer">
+                <a class="seeCartButton" href="shoppingBag.html"><button>See Cart</button></a>
         </div>
         <div class="basketBox3 boxStyle">
             <p>Share</p>

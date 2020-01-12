@@ -57,12 +57,13 @@ var data = [
   function buildAllShoppingItems(){
     const retrievedData = JSON.parse(sessionStorage.getItem("ShoppingCart"));
     const totalContentBox = document.getElementById('shoppingBag');
+    const totalSum = document.getElementById('totalSum')
     console.log(retrievedData) // Log out data from sessionStorage
   
     //check if the array is not empty, then do nothing
     if(retrievedData === null || retrievedData === undefined){
       totalContentBox.innerHTML += `
-      <h3>Shopping Bag</h3>
+      <h3>List Item</h3>
       <div class="itemsContainer">
           <div class="itemImage">
               <img class="imageDisplayed" alt="Picture of Shoes" src="https://axiomoptics.com/wp-content/uploads/2019/08/placeholder-images-image_large.png">
@@ -70,7 +71,7 @@ var data = [
           <div class="descriptionForImage" id="descriptionParagraph">
               <p class="descriptionParagraph">No Shoes has been chosen</p>
               <p>Size: N/A</p>
-              <p><img id="removeTrash" src="/icons/trash.svg" alt="trash icon"> Remove | <img id="emptyheart" src="icons/emptyheart.svg" alt="wish heart icon"> Heart It</p>
+              <p><img id="removeTrash" src="/icons/trash.svg" alt="trash icon"> Remove | <img id="emptyheart" src="icons/emptyheart.svg" alt="wish heart icon" onclick="likeIconChanger()">Like!</p>
           </div>
           <div class="amountBox">
               <select>
@@ -87,33 +88,93 @@ var data = [
               // For each item, lets get some html
               itemHtml = buildShoppingList(item);
               totalContentBox.innerHTML += itemHtml; // Add the item html to some div or container
+              sumHtml = buildTotalSumList(item);
+              totalSum.innerHTML += sumHtml; // Add the item in the sum calculator
           }  
       }
-  }
+  };
+
+function buildTotalSumList(item){
+    let dataItem = data.find(obj => obj.id === item.id)// Fetch item with more info
+    dataItem.size = item.size;
+    let discountPrice = Math.round(dataItem.price / 100 *75)
+    console.log(discountPrice);
+    let html = `<h4>Total Sum</h4>
+    <div class="leftInfoColumn">
+        <p>Price:</p><span class="detail">$${dataItem.price}</span>
+        <p>Discount:</p><span class="detail" style="color: red;">25%</span>
+        <p>Shipping:</p><span class="detail">Free</span>
+    </div>
+    <hr id="hr">
+    <div class="totalPriceSummary">
+        <p id="totalPrice">Total sum:</p><span id="toatlPriceSum">(25%) - $${discountPrice}</span>
+    </div>
+    <div class="btnContainerPurchase">
+        <button id="purchase">Checkout</button>
+    </div>`
+
+    return html
+}
   
-  function buildShoppingList(item){
-      var dataItem = data.find(obj => obj.id === item.id) // Fetch item with more info
-      dataItem.size = item.size; // Add size into the mix
-      console.log(dataItem);
-      var html = `<h3>Shopping Bag</h3>
-        <div class="itemsContainer">
-        <div class="itemImage">
-            <img class="imageDisplayed" alt="Picture of Shoes" src="${dataItem.imageUrl}">
+function buildShoppingList(item){
+    let dataItem = data.find(obj => obj.id === item.id) // Fetch item with more info
+    dataItem.size = item.size; // Add size into the mix
+    console.log(dataItem);
+    let html = `<h3>List Item</h3>
+    <div class="itemsContainer">
+    <div class="itemImage">
+        <img class="imageDisplayed" alt="Picture of Shoes" src="${dataItem.imageUrl}">
+    </div>
+    <div class="descriptionForImage" id="descriptionParagraph">
+        <p class="descriptionParagraph">${dataItem.name} - $${dataItem.price}</p>
+        <p>Size: ${dataItem.size}</p>
+        <p><img id="removeTrash" src="/icons/trash.svg" alt="trash icon" onclick="removeTrash(${dataItem.id})"> Remove | <img id="emptyheart" src="icons/emptyheart.svg" alt="wish heart icon" onclick="likeIconChanger()"> Like!</p>
         </div>
-        <div class="descriptionForImage" id="descriptionParagraph">
-            <p class="descriptionParagraph">${dataItem.name} - ${dataItem.price}</p>
-            <p>Size: ${dataItem.size}</p>
-            <p><img id="removeTrash" src="/icons/trash.svg" alt="trash icon"> Remove | <img id="emptyheart" src="icons/emptyheart.svg" alt="wish heart icon"> Heart It</p>
-            </div>
-            <div class="amountBox">
-                <select>
-                    <option value="1">1</option>
-                    <option value="1">2</option>
-                    <option value="1">3</option>
-                    <option value="1">4</option>
-                </select>
-            </div>
-        </div>  
-            `
-      return html
-  }
+        <div class="amountBox">
+            <select>
+                <option value="1">1</option>
+                <option value="1">2</option>
+                <option value="1">3</option>
+                <option value="1">4</option>
+            </select>
+        </div>
+    </div>  
+        `
+    return html
+}
+
+//program to change the like icon
+function likeIconChanger(){
+    let img1 = document.getElementById('emptyheart');
+    let img2 = "icons/fullheart.svg";
+    let imgElement = document.getElementById('emptyheart');
+
+    // if the heart icon is empty, set it to full heart on click
+    if (imgElement === img1){
+        console.log('changed successfully')
+        imgElement.src = img2
+        //Setting back img1 to its original since it changed above
+        img1 = "icons/emptyheart.svg"
+        //console log to verify img1
+        console.log(img1 + " equals img1")
+        console.log(img2 + " equals img2")
+        //Else If img element is equal to full heart
+    } else if (imgElement === img2){
+        //Then set it equal to empty heart
+        imgElement.src = img1
+        console.log(img1)
+    }
+        
+};
+
+//Remove list item
+function removeTrash(id){
+    const retrievedData = JSON.parse(sessionStorage.getItem("ShoppingCart"));
+    console.log(retrievedData)
+    const selectedElement = data.find(obj => obj.id === id);
+    if (retrievedData !== null || retrievedData !== undefined){
+        sessionStorage.removeItem(selectedElement);
+        console.log('')
+    }
+    console.log('item not removed');
+}
